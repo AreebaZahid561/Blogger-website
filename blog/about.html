@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="blog.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="head">
+      <div class="left">
+        <img src="images/icon.webp" alt="headimg" />
+        <h1>
+          The Artifact<br />
+          culture and art blog
+        </h1>
+      </div>
+
+      <nav class="nave">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search..."
+            onkeyup="filterPosts()"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+        <ul id="navLinks">
+          <li><a href="blog.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="post.html">Posts</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="aboutsec">
+      <h1>About The Artifact</h1>
+      <div class="about">
+        <div>
+          <p class="para1">
+            The Artifact is a culture and art blog that provides a platform for
+            celebrating the wide range of creative expressions found across the
+            globe. It explores various artistic mediums, including painting,
+            sculpture, film, photography, and digital art, while also examining
+            the relationship between culture and art, highlighting how each
+            influences the other. Through well-researched articles, insightful
+            artist interviews, and in-depth analysis.The Artifact aims to
+            connect readers with both historical and contemporary artistic
+            movements.
+            <span class="more-text">
+              The Artifact seeks to connect readers with both historical and
+              contemporary movements, showcasing the transformative power of art
+              in society.
+            </span>
+            <span class="dots">...</span>
+            <button class="read-more-btn">Read more</button>
+          </p>
+
+          <p>
+            In addition to covering the visual arts, The Artifact expands its
+            focus to include music, theater, literature, and design, recognizing
+            that culture is a rich and multifaceted experience. This expansion
+            reflects an understanding that artistic expression is not confined
+            to visual media alone but spans a variety of creative forms. By
+            offering insights into different cultural practices and artistic
+            trends from around the world.The blog encourages readers to delve
+            into the intersections of tradition and personal expression.
+
+            <span class="more-text">
+              The blog encourages readers to explore the intersections of
+              tradition, innovation, and personal expression.
+            </span>
+            <span class="dots">...</span>
+            <button class="read-more-btn">Read more</button>
+          </p>
+        </div>
+        <div>
+          <img src="images/aboutimg.webp" alt="aboutimg" />
+        </div>
+      </div>
+
+      <div class="btn">
+        <a href="contact.html">
+          <button>Contact me for more Info or questions</button>
+        </a>
+      </div>
+    </section>
+
+    <div class="back">
+      <a href="blog.html">Back to Home</a>
+    </div>
+
+    <script src="blog.js"></script>
+  </body>
+</html>

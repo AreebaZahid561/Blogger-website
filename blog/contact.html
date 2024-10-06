@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="blog.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="head">
+      <div class="left">
+        <img src="images/icon.webp" alt="headimg" />
+        <h1>
+          The Artifact<br />
+          culture and art blog
+        </h1>
+      </div>
+
+      <nav class="nave">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search..."
+            onkeyup="filterPosts()"
+          />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+        <ul id="navLinks">
+          <li><a href="blog.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="post.html">Posts</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="contact">
+      <div class="contactdiv">
+        <h1>Contact Me</h1>
+        <p>
+          For any question you may have, or info you’d like to share about new
+          worthy arts and culture events, you can reach me here: info@mysite.com
+        </p>
+        <form id="contactForm">
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="tel" placeholder="Phone" required />
+          <textarea
+            placeholder="Type your message here..."
+            rows="5"
+            cols="30"
+            required
+          ></textarea>
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </section>
+
+    <div class="back">
+      <a href="blog.html">Back to Home</a>
+    </div>
+
+    <script src="blog.js"></script>
+  </body>
+</html>

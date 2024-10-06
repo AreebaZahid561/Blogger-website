@@ -1,0 +1,667 @@
+/* Default styles (for larger screens) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+  height: 12rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  padding-top: 12rem; /* This should match the header height */
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 10rem;
+}
+
+.left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.left h1 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 100;
+}
+
+nav {
+  display: flex;
+  flex-direction: column; /* Stack nav items vertically in mobile */
+  gap: 1.5rem;
+  margin-right: 7rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row; /* Show links in a row on larger screens */
+  gap: 2rem;
+  transition: height 0.3s ease; /* Keep transition for mobile */
+}
+
+nav ul.show {
+  display: flex; /* Show links in mobile when toggled */
+}
+
+nav ul li {
+  font-size: 1.1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: rgb(32, 175, 175);
+}
+
+/* Adjusted styles for hamburger button */
+.hamburger {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: absolute; /* Position it absolutely */
+  top: 20px; /* Adjust as necessary to fit within the header */
+  right: 20px; /* Distance from the right edge of the header */
+}
+
+.search-bar {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar input:hover,
+.search-bar input:focus {
+  border: none;
+  box-shadow: 0 0 0 2px rgb(32, 175, 175);
+  outline: none;
+}
+
+.search-bar input::placeholder {
+  color: white;
+}
+
+.search-bar i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1rem;
+}
+
+/* Media Queries */
+
+/* For tablets (768px and below) */
+@media (max-width: 768px) {
+  header {
+    height: 10rem; /* Reduce the header height */
+  }
+
+  body {
+    padding-top: 10rem; /* Match this with the header height */
+  }
+
+  .left {
+    margin-left: 2rem; /* Reduce margin for smaller screens */
+  }
+
+  .left h1 {
+    font-size: 1.2rem; /* Reduce font size */
+  }
+
+  nav {
+    margin-right: 2rem; /* Reduce the right margin */
+  }
+
+  nav ul {
+    gap: 1rem; /* Reduce gap between nav items */
+  }
+
+  .search-bar {
+    width: 200px; /* Shrink search bar width */
+  }
+}
+
+/* For mobile screens (480px and below) */
+@media (max-width: 480px) {
+  header {
+    height: 8rem; /* Further reduce the header height */
+    padding: 10px 0;
+  }
+
+  body {
+    padding-top: 8rem; /* Match this with the header height */
+  }
+
+  .head {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch; /* Stretch to fill the width */
+  }
+
+  .left {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .left img {
+    width: 40px; /* Reduce image size */
+    height: 40px;
+  }
+
+  .left h1 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  nav {
+    display: flex; /* Keep nav as a flex container */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Align items vertically center */
+    margin-right: 0;
+    margin-top: 10px; /* Add some margin above the nav */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav links vertically */
+    gap: 0.5rem;
+    display: none; /* Initially hide the nav links */
+    position: absolute; /* Position it absolutely for overlay */
+    top: 8rem; /* Position below the header */
+    right: 0; /* Align to the right */
+    background: #333; /* Match the header background */
+    width: 100%; /* Full width */
+    z-index: 999; /* Ensure it appears above other content */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-left: 1.5rem;
+  }
+
+  .hamburger {
+    display: inline-block;
+    visibility: visible; /* Show the hamburger button */
+    margin-left: auto; /* Push it to the far right */
+    margin-bottom: 2px;
+  }
+
+  .search-bar {
+    width: 75%; /* Make the search bar full-width */
+    margin: 10px 0; /* Add margin for spacing */
+  }
+
+  .search-bar input {
+    padding: 8px 30px 8px 8px; /* Adjust padding */
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+/* Other styles remain unchanged */
+
+.posts {
+  display: grid;
+  gap: 2rem; /* Adjust the gap between items */
+  grid-template-columns: repeat(3, 1fr); /* Set to three equal columns */
+  max-width: 1200px; /* Set a maximum width */
+  margin: auto; /* Center the grid horizontally */
+
+  padding-bottom: 3rem;
+  border-bottom: 2px dotted #ccc;
+}
+@media (max-width: 768px) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+
+@media (max-width: 480px) {
+  .posts {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+}
+
+.post {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 50px; /* Optional: Ensures posts are not too short */
+}
+
+img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+.out {
+  padding: 1rem;
+  margin-top: 1rem;
+  /* Add this line for the underline effect */
+}
+
+.outerbutton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.leftone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.leftone i {
+  color: rgb(214, 208, 208);
+}
+
+.midone {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.paraone {
+  color: gray;
+  margin: 0;
+}
+
+.paratwo {
+  color: gray;
+  font-size: small;
+}
+
+.doot {
+  cursor: pointer; /* Changes cursor to pointer */
+}
+
+.doot i {
+  color: rgb(39, 18, 18);
+}
+.inner {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+}
+.inner h1 {
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: 10;
+  line-height: 2rem;
+}
+.inner h1:hover,
+.inner p:hover {
+  color: rgb(32, 175, 175);
+  cursor: pointer;
+}
+
+.view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+}
+
+.view i {
+  color: red;
+}
+
+.view i:hover {
+  cursor: pointer;
+}
+
+.filled-heart i {
+  color: red;
+}
+
+.leftgroup {
+  display: flex;
+  gap: 1rem;
+}
+footer {
+  text-align: center;
+  padding: 2rem 10rem;
+  background: #333;
+  color: #fff;
+  bottom: 0;
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foot {
+  display: flex; /* Make sure this is a flex container */
+  gap: 1.5rem; /* Adjust this value for more or less space */
+}
+.back {
+  background: #333;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-bottom: 2px dotted #ccc;
+}
+.back a {
+  text-decoration: none;
+  color: white;
+}
+.back :hover {
+  color: rgb(32, 175, 175);
+}
+.aboutsec {
+  border-bottom: 2px dotted #ccc;
+}
+
+.aboutsec h1 {
+  /* Fixed class name typo */
+  background-color: rgb(32, 175, 175);
+  color: black;
+  font-weight: 400; /* Valid weight */
+  margin-top: 2rem;
+  padding: 0 5rem;
+  max-width: 30rem; /* Good use of max-width */
+  font-size: 2rem;
+  font-family: sans-serif;
+  margin-left: 5rem;
+}
+
+.about p {
+  color: rgb(54, 51, 51);
+}
+.about img {
+  border: 2px solid rgb(168, 166, 166);
+  height: auto;
+  width: 85%;
+  position: static;
+}
+/* Base styles for the about section */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 1rem 1.5rem 1em 5rem;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    padding: 1rem; /* Adjust padding */
+  }
+  footer {
+    padding: 2rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutsec h1 {
+    font-size: 1.5rem; /* Adjust heading size */
+    margin-left: 1rem; /* Adjust margin */
+  }
+
+  .btn button {
+    width: 100%; /* Make button full width */
+    padding: 0.5rem; /* Adjust padding */
+  }
+  footer {
+    flex-direction: column;
+    padding: 2rem 2rem;
+    gap: 0.5rem;
+  }
+}
+
+.para1 {
+  margin-bottom: 1rem;
+  border-bottom: 2px dotted rgb(101, 98, 98); /* This creates a dotted line below the paragraph */
+  padding-bottom: 1rem; /* Adds some space between the text and the dotted line */
+}
+.btn {
+  padding: 0rem 5rem;
+  margin-bottom: 2rem;
+}
+.btn :hover {
+  background-color: rgb(207, 97, 207);
+  color: white;
+  transition: 0.3s ease-in;
+}
+.btn a {
+  text-decoration: none; /* Removes underline from link */
+}
+
+.btn a:hover {
+  text-decoration: none;
+}
+
+.btn button {
+  background-color: white;
+  color: rgb(95, 90, 90);
+  font-weight: 1;
+
+  border: 2px solid rgb(18, 15, 15);
+  width: 20rem;
+  font-size: 1rem;
+  padding: 1rem 0.1rem;
+  font-family: sans-serif;
+}
+.more-text {
+  display: none; /* Hides the extra text */
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: rgb(32, 175, 175);
+  cursor: pointer;
+}
+
+.read-more-btn:hover {
+  color: rgb(207, 97, 207);
+}
+.contact {
+  display: flex; /* Use flexbox for layout */
+  justify-content: flex-start; /* Align to the left */
+  padding: 0 1.5rem; /* Adjust padding */
+  margin-left: 2rem; /* Add left margin */
+}
+
+.contact h1 {
+  /* Fixed class name typo */
+  background-color: rgb(32, 175, 175);
+  color: black;
+  font-weight: 400; /* Valid weight */
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+
+  max-width: 15rem; /* Good use of max-width */
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+.contactdiv {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 5rem 6rem 3rem;
+  gap: 1.5rem;
+  width: 50%; /* Ensure it takes full width of the parent */
+}
+.contactdiv p {
+  color: rgb(58, 57, 57);
+}
+
+form {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  gap: 1rem; /* Space between inputs */
+  position: relative; /* Required for absolute positioning of the button */
+}
+
+.contactdiv input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  resize: none;
+  padding: 1rem;
+  border: 2px solid grey; /* Set the border color to grey */
+  border-radius: 5px;
+  width: 100%; /* Make inputs full width */
+  height: 50px; /* Set a fixed height for input fields */
+}
+
+input[type="submit"] {
+  text-decoration: none;
+  border: none; /* Remove border */
+  background: none; /* Remove background */
+  color: gray; /* Set text color to gray */
+  cursor: pointer; /* Change cursor to pointer */
+  margin-left: auto; /* Push the button to the right */
+  align-self: flex-end; /* Align to the bottom right */
+  padding: 0; /* Remove any default padding */
+  font-size: 1.5rem; /* Set font size */
+}
+
+/* Add hover effect if needed */
+input[type="submit"]:hover {
+  color: rgb(32, 175, 175);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+textarea:hover,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border-color: black; /* Change border color to black on hover/focus */
+}
+
+textarea {
+  height: auto; /* Optional: Adjust height if needed */
+  resize: none; /* Allow vertical resizing only */
+}
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .contactdiv {
+    width: 80%; /* Allow more width on smaller screens */
+    padding: 1rem; /* Reduce padding */
+  }
+
+  .contact h1 {
+    font-size: 1.5rem; /* Adjust heading size */
+    margin-left: 0; /* Remove left margin */
+  }
+}
+
+@media (max-width: 480px) {
+  .contactdiv {
+    width: 95%; /* Full width on very small screens */
+    padding: 0.5rem; /* Further reduce padding */
+  }
+
+  .contact h1 {
+    font-size: 1.3rem; /* Further adjust heading size */
+  }
+
+  .contact p {
+    font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+
+  input[type="submit"] {
+    font-size: 1.2rem; /* Adjust button font size */
+  }
+}
+
+.postback {
+  bottom: 0; /* Position at the bottom of the page */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  text-align: center; /* Center the link */
+  background: #333; /* Optional: background color for visibility */
+  color: white; /* Text color */
+  /* Add padding */
+}
+
+.postback a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.postback a:hover {
+  color: rgb(32, 175, 175); /* Change color on hover */
+}
+.posthead {
+  background-color: rgb(32, 175, 175);
+  color: black;
+  font-weight: 400; /* Valid weight */
+  max-width: 10rem; /* Good use of max-width */
+  font-size: 2rem;
+  font-family: sans-serif;
+  margin: 1rem; /* Set 1rem margin on all sides */
+  text-align: center; /* Align text to the left */
+  top: 0; /* Position at the bottom of the page */
+  left: 0; /* Align to the left */
+  right: 0;
+}
+.ppage {
+  top: 0; /* Position at the bottom of the page */
+  left: 0; /* Align to the left */
+  right: 0;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 5rem;
+}
